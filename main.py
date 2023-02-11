@@ -19,7 +19,7 @@ def find_mismatch(text):
 
         if next in ")]}":
             # Process closing bracket, write your code here
-            if (are_matching(opening_brackets_stack.pop() , next) == False):
+            if (len(opening_brackets_stack) < 1) or are_matching(opening_brackets_stack.pop() , next) == False:
                 return i + 1
 
     if (len(opening_brackets_stack) == 0):
