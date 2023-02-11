@@ -12,19 +12,32 @@ def are_matching(left, right):
 def find_mismatch(text):
     opening_brackets_stack = []
     for i, next in enumerate(text):
+        
         if next in "([{":
             # Process opening bracket, write your code here
-            pass
+            opening_brackets_stack.append(next)
 
         if next in ")]}":
             # Process closing bracket, write your code here
-            pass
+            if (len(text) <= 1):
+                return i
+            if (are_matching(opening_brackets_stack[-1] , next)):
+                opening_brackets_stack.pop()
+            else:
+                return i
+
+    if (len(opening_brackets_stack) == 0):
+        return 'Success'
+    else:
+        return len(text) - 1
+
 
 
 def main():
     text = input()
     mismatch = find_mismatch(text)
     # Printing answer, write your code here
+    print(mismatch)
 
 
 if __name__ == "__main__":
