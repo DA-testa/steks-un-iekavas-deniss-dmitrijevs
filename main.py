@@ -1,5 +1,8 @@
 # python3
 
+#Created by Deniss Dmitrijevs 221RDB322
+#DmitrijsDenisovs is account in possession of Deniss Dmitrijevs
+
 from collections import namedtuple
 
 Bracket = namedtuple("Bracket", ["char", "position"])
