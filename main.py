@@ -21,7 +21,7 @@ def find_mismatch(text):
             opening_brackets_stack.append(Bracket(next, i + 1))
         if next in ")]}":
             # Process closing bracket, write your code here
-            if not are_matching(opening_brackets_stack.pop().char , next) or len(opening_brackets_stack) == 0:
+            if len(opening_brackets_stack) == 0 or not are_matching(opening_brackets_stack.pop().char , next):
                 return i + 1
 
     if (len(opening_brackets_stack) == 0):
